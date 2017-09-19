@@ -5,7 +5,7 @@ There are 10 testcases in Ceili's PPT, here are the configuration files of testc
 
 I don not upload my Pcap (Wireshark) files because they exceed the maximum size limit. But you can download these files and run them directly on your virtual machine without changing anything. After you run the test you can get all data you want and measure the delays and jitters. What's more, the configuration of the remaining 9 tests are all similar, I think you can do that very quickly.
  
-Take testcase 1 as an example, I want to explain something. In the single TCP case, ship1 and ship2 use SAT1, ship3 and ship4 use SAT2, and ship5 uses SAT3. In the MPTCP-baseline, each ship just split the flows evenly, e.g. the two subflows of ship1 are  both 5Mbps and the two subflows of ship4 are both 3Mbps.
+Take testcase 1 as an example, I want to explain something. In the single TCP case, ship1 and ship2 use SAT1, ship3 and ship4 use SAT2, and ship5 uses SAT3. In the MPTCP-baseline, each ship just splits the flows evenly, e.g. the two subflows of ship1 are  both 5Mbps and the two subflows of ship4 are both 3Mbps.
 
 1. Queues work well in the test. The flows are very smooth and the throughputs can reach the rates we set, which is much better than the case with meters.
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1fjp3ariyy4j31kw0u643m.jpg)
@@ -31,5 +31,5 @@ I pull all the commands in the file "**QueueConfig.sh".
 
 2. I haven't completed the implementation of FDM in the new testbed. The code should be in the file "**.py". I referred to previous code. However, There are some problems about the previous implementation of FDM. It cannot computes the right results in these testcases, I think we need to modify the code. 
 
-3. There are some bugs of Minints and MPTCP. Although We can solve them using some strange methods and they will not influence the results, Ceili and Jae may be confused about our operations. 
+3. There are some bugs of Mininets and MPTCP-linux-kernel. Although We can solve them using some strange methods and they will not influence the results, Ceili and Jae may be confused about our operations. 
 
