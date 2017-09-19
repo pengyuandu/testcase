@@ -5,7 +5,7 @@ sudo ovs-ofctl add-flow s1 ip,nw_src=10.0.1.0/32,actions=set_queue:1,output:3
 sudo ovs-ofctl add-flow s1 ip,nw_src=10.0.1.1/32,actions=set_queue:2,output:4
 sudo ovs-ofctl add-flow s1 in_port=3,actions=normal
 sudo ovs-ofctl add-flow s1 in_port=4,actions=normal
-sudo ovs-ofctl add-flow s1 priority=100,actions=normal #default L2 forwarding policy, low priority flow entry
+sudo ovs-ofctl add-flow s1 priority=100,actions=normal #default L2 forwarding policy
 
 
 #subflow1 of ship2 goes to port 3, subflow2 of ship2 goes to port 4 
