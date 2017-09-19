@@ -1,4 +1,4 @@
-# This is my configure files of the test.
+# Configuration files of the test.
 There are 10 testcases in Ceili's PPT, here are the configuration files of testcase 1.
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fjp3c20xdtj311w0sidjy.jpg)
