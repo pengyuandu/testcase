@@ -3,16 +3,18 @@ There are 10 testcases in Ceili's PPT, here are the configuration files of testc
 
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fjp3c20xdtj311w0sidjy.jpg)
 
-I don not upload my Pcap (Wireshark) files because they exceed the maximum size limit. But you can download these files and run them directly on your virtual machine without changing anything. After you run the test you can get all data you want. What's more, the configuration of the remaining 9 tests are all similar, I think you can do that very quickly.
+I don not upload my Pcap (Wireshark) files because they exceed the maximum size limit. But you can download these files and run them directly on your virtual machine without changing anything. After you run the test you can get all data you want and measure the delays and jitters. What's more, the configuration of the remaining 9 tests are all similar, I think you can do that very quickly.
  
-Take testcase 1 as an example, I want to explain something.
+Take testcase 1 as an example, I want to explain something. In the single TCP case, ship1 and ship2 use SAT1, ship3 and ship4 use SAT2, and ship5 uses SAT3. In the MPTCP-baseline, each ship just split the flows evenly, e.g. the two subflows of ship1 are  both 5Mbps and the two subflows of ship4 are both 3Mbps.
 
 1. Queues work well in the test. The flows are very smooth and the throughputs can reach the rates we set, which is much better than the case with meters.
 ![](https://ws3.sinaimg.cn/large/006tKfTcly1fjp3ariyy4j31kw0u643m.jpg)
 ![](https://ws2.sinaimg.cn/large/006tKfTcly1fjp3li0a99j31kw0u0796.jpg)
 ![](https://ws4.sinaimg.cn/large/006tKfTcly1fjp3m8socnj31kw0qgq8d.jpg)
 
-2. How to set a queue in a switch? If we want to add a queue in the switch S1 of which the rate is exactly 5.35 Mbps, we use the following command. 
+3. Don't set the rate too large, otherwise they cannot not get the results you expect. In Ceili's  PPT, the capacites are 30, 20, 15 Mbps and the demands are 10,10, 8, 6, 6 Mbps, I recommend you to set the capacities to 3.0, 2.0, 1.0 Mbps and set the demands to 1, 1, 0.8, 0.6, 0.6 Mbps.
+
+2. How to set a queue in a switch? If we want to add a queue in the switch S1 of which the rate is exactly 0.535 Mbps, we use the following command. 
 ![](https://ws1.sinaimg.cn/large/006tKfTcly1fjp3v5kb1bj315s036gn2.jpg)
 I pull all the commands in the file "**QueueConfig.sh".
 
